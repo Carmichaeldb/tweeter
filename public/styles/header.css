@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 120px;
+  height: 520px;
+  width: 100%;
+  background-color: #00eeff;
+  background-image: url(../images/asfalt-dark.png);
+}
+
+header * {
+  margin: 0;
+}

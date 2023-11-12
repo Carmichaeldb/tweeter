@@ -21,7 +21,12 @@ body {
   font-family: 'Source Sans 3', sans-serif;
 }
 
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ main {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+ }
