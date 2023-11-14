@@ -30,3 +30,7 @@ body {
   margin-left: auto;
   margin-right: auto;
  }
+
+ section {
+  margin-bottom: 40px;
+ }

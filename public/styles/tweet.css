@@ -1,0 +1,54 @@
+.tweets article {
+  border: 3px solid black;
+  margin: 20px 10px 30px 10px;
+  padding: 10px;
+}
+
+.tweets header {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.tweets header img {
+  padding-right: 10px;
+  max-width: 45px;
+}
+.tweets header a {
+  text-decoration: none;
+}
+.tweets header .tweet-user {
+  margin-left: auto;
+}
+
+.tweets main {
+  max-width: 95%;
+  font-weight: bold;
+}
+
+.tweets footer {
+  border-top: 3px solid black;
+  font-size: 70%; 
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tweets footer * {
+  margin: 5px 10px 5px 10px;
+}
+
+.tweets footer .tweet-icons {
+  color: #4056A1;
+}
+
+.tweets article:hover {
+  box-shadow: 10px 10px lightblue;
+}
+
+.tweets footer .tweet-icons i:hover {
+  color: orange;
+}
