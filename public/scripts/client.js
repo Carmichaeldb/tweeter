@@ -36,8 +36,17 @@ $(document).ready(function() {
     }
   };
 
-  // Creates Tweets from database 
+  // Escape function to prevent XSS
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
+  // Creates Tweets from database
   const createTweetElement = function(tweet) {
+    const tweetContent = tweet.content.text;
+    const safeHTML = `<p>${escape(tweetContent)}</p>`;
     let $tweet = $(`
     <article>
     <header>
@@ -46,7 +55,7 @@ $(document).ready(function() {
     <a class="tweet-user" href="">${tweet.user.handle}</a>
     </header>
     <main>
-    <p>${tweet.content.text}</p>
+    ${safeHTML}
     </main>
     <footer>
     <p>${timeago.format(tweet.created_at)}</p>
