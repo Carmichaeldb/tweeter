@@ -10,7 +10,8 @@ $(document).ready(function() {
     const charCount = 140 - textAreaInput;
     if (charCount < 0) {
       $(".counter").text(charCount).css({"color": "red"});
+      return;
     }
-    $(".counter").text(charCount);
+    $(".counter").text(charCount).css({"color": "inherit"});
   });
 });

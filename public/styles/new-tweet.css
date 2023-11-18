@@ -41,4 +41,16 @@
   background-color: #4056A1;
   color: white;
   border: 0;
+  padding: 3px;
+}
+
+.new-tweet #tweet-error {
+  max-width: fit-content;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px #9d9d9d;
+  padding: 3px;
+  border-radius: 0;
+  display: none;
 }

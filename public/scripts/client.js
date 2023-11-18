@@ -11,11 +11,11 @@ $(document).ready(function() {
     event.preventDefault();
     const tweetText = $("#tweet-text").val();
     if (tweetText === "") {
-      alert("Your Tweet is Empty!");
+      $("#tweet-error").text("Your Tweet is Empty!").slideDown().css({"display": "inline-block"}).delay(2000).slideUp();
       return;
     }
     if (tweetText.length > 140) {
-      alert("Your Tweet is too long!");
+      $("#tweet-error").text("Your Tweet is too Long!").slideDown().css({"display": "inline-block"}).delay(2000).slideUp();
       return;
     }
     $.ajax({
