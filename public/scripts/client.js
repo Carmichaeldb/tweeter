@@ -6,26 +6,31 @@
 
 $(document).ready(function() {
 
+  // scroll to top button
   $(window).scroll(function() {
     if ($(this).scrollTop()) {
       $('#to-top').fadeIn();
     } else {
       $('#to-top').fadeOut();
     }
-});
+  });
 
 $("#to-top").click(function() {
     $("html, body").animate({scrollTop: 0}, 0);
- });
+  });
 
+  // write tweet button animations
   $(".write-tweet").on("mouseenter", function() {
     $(".write-tweet p").animate({marginTop: '10px'}, "slow");
     $(".fa-angles-down").animate({marginTop: '10px'}, "slow");
   });
+
   $(".write-tweet").on("mouseleave", function() {
     $(".write-tweet p").animate({marginTop: '0px'}, "slow");
     $(".fa-angles-down").animate({marginTop: '0px'}, "slow");
   });
+
+  // show write tweek form
   $(".write-tweet").on("click", function() {
     $(".new-tweet").slideDown().css({"display": "flex"});
     $("#tweet-text").focus();
@@ -48,6 +53,7 @@ $("#to-top").click(function() {
       url: "/tweets/",
       data: $("form").serialize(),
       success: function(res) {
+        $("#tweet-text").val("");
         loadTweets();
       }
     });
