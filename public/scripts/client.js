@@ -30,8 +30,9 @@ $(document).ready(function() {
   
   // Render tweets in the tweets-container
   const renderTweets = function(tweets) {
+    $("#tweets-container").empty();
     for (const tweet of tweets) {
-      $("#tweets-container").append(createTweetElement(tweet));
+      $("#tweets-container").prepend(createTweetElement(tweet));
     }
   };
 
