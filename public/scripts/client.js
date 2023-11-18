@@ -5,15 +5,38 @@
  */
 
 $(document).ready(function() {
+
+  // Submits tweet form
+  $(".tweet-form").on("submit", function(event) {
+    event.preventDefault();
+    const tweetText = $("#tweet-text").val();
+    if (tweetText === "") {
+      alert("Your Tweet is Empty!");
+      return;
+    }
+    if (tweetText.length > 140) {
+      alert("Your Tweet is too long!");
+      return;
+    }
+    $.ajax({
+      method: "POST",
+      url: "/tweets/",
+      data: $("form").serialize(),
+      success: function(res) {
+        loadTweets();
+      }
+    });
+  });
   
+  // Render tweets in the tweets-container
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
       $("#tweets-container").append(createTweetElement(tweet));
     }
   };
 
+  // Creates Tweets from database 
   const createTweetElement = function(tweet) {
-    let postDate = new Date(tweet.created_at);
     let $tweet = $(`
     <article>
     <header>
@@ -25,13 +48,14 @@ $(document).ready(function() {
     <p>${tweet.content.text}</p>
     </main>
     <footer>
-    <p>${postDate.toDateString()}</p>
+    <p>${timeago.format(tweet.created_at)}</p>
     <div class="tweet-icons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-arrows-rotate"></i><i class="fa-solid fa-heart"></i></div>
     </footer>
     </article>`);
     return $tweet;
   };
 
+  // Collects Database tweet information
   const loadTweets = function() {
     $.ajax("/tweets", {
       method: "GET",
@@ -42,13 +66,4 @@ $(document).ready(function() {
   };
 
   loadTweets();
-
-  $(".tweet-form").on("submit", function(event) {
-    event.preventDefault();
-    $.ajax({
-      method: "POST",
-      url: "/tweets/",
-      data: $("form").serialize()
-    });
-  });
 });
