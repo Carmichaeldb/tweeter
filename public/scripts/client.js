@@ -6,6 +6,31 @@
 
 $(document).ready(function() {
 
+  $(window).scroll(function() {
+    if ($(this).scrollTop()) {
+      $('#to-top').fadeIn();
+    } else {
+      $('#to-top').fadeOut();
+    }
+});
+
+$("#to-top").click(function() {
+    $("html, body").animate({scrollTop: 0}, 0);
+ });
+
+  $(".write-tweet").on("mouseenter", function() {
+    $(".write-tweet p").animate({marginTop: '10px'}, "slow");
+    $(".fa-angles-down").animate({marginTop: '10px'}, "slow");
+  });
+  $(".write-tweet").on("mouseleave", function() {
+    $(".write-tweet p").animate({marginTop: '0px'}, "slow");
+    $(".fa-angles-down").animate({marginTop: '0px'}, "slow");
+  });
+  $(".write-tweet").on("click", function() {
+    $(".new-tweet").slideDown().css({"display": "flex"});
+    $("#tweet-text").focus();
+  });
+
   // Submits tweet form
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
