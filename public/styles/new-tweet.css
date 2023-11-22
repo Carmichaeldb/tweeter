@@ -1,5 +1,4 @@
 .new-tweet {
-  display: none;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
@@ -53,4 +52,12 @@
   padding: 3px;
   border-radius: 0;
   display: none;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .new-tweet {
+    display: none;
+  }
+
 }

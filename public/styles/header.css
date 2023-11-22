@@ -13,3 +13,16 @@
 header * {
   margin: 0;
 }
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+  .main-header {
+    width: 40%;
+    padding: 2em 4em 2em 4em;
+    margin-top: 220px;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+  
+}
