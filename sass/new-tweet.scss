@@ -1,0 +1,66 @@
+@import "utilities";
+
+/* New Tweet Section */
+.new-tweet {
+  flex-wrap: wrap;
+  @include center;
+
+  h2 {
+    width: 100%;
+  }
+
+  button {
+    background-color: $lightBlue;
+    color: $white;
+    border: 0;
+    padding: 3px;
+  }
+
+  #tweet-error {
+    max-width: fit-content;
+    background-color: $red;
+    color: $white;
+    font-weight: bold;
+    box-shadow: 2px 2px 2px $gray;
+    padding: 3px;
+    border-radius: 0;
+    display: none;
+  }
+
+  .form-bottom {
+    margin-top: 5px;
+    display: flex;
+    justify-self: flex-end;
+    justify-content: space-between;
+    font-family: $bungee;
+  }
+
+  /* New Tweet Form */
+  .tweet-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  
+    label {
+      font-weight: bold;
+    }
+  
+    textarea {
+      background-color: transparent;
+      min-height: auto;
+      border: 0;
+      border-bottom: 3px solid $black;
+      width: 100%;
+      resize: none;
+      overflow: none;
+    }
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .new-tweet {
+    display: none;
+  }
+
+}

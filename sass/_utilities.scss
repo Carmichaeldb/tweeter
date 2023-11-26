@@ -1,0 +1,21 @@
+ $gray: #545149;
+ $white: #f4f1ec;
+ $red: #ff0000;
+ $blue: #0000ff;
+ $lightBlue: #4056A1;
+ $teal: #00eeff;
+ $black: #000000;
+ $orange: #ffa500;
+
+ $sans3: 'Source Sans 3', sans-serif; 
+ $bungee: 'Bungee', sans-serif;
+
+ @mixin center {
+  justify-content: center;
+  align-items: center;
+ }
+
+ @mixin center-between {
+  justify-content: space-between;
+  align-items: center;
+ }

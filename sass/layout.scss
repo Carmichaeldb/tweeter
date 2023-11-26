@@ -3,35 +3,39 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+@import "utilities";
+
 /* Global layout stuff */
+
 html {
   box-sizing: border-box;
 }
-
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $gray;
+  background-color: $white;
   font-size: 24px;
-  font-family: "Source Sans 3", sans-serif;
+  font-family: $sans3;
 }
 
 /* Main Layout */
-main {
+
+ main {
   width: 90%;
   margin-left: 50px;
   margin-right: 50px;
-}
+ }
 
-section {
+ section {
   margin-bottom: 40px;
-}
+ }
 
 /* Top-Top Button */
-#to-top {
+ #to-top {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -39,23 +43,26 @@ section {
   z-index: 99;
   border: none;
   outline: none;
-  background-color: #ff0000;
-  color: #f4f1ec;
+  background-color: $red;
+  color: $white;
   padding: 25px;
   border-radius: 50%;
   font-size: 18px;
 }
 
 #to-top:hover {
-  color: #0000ff;
+  color: $blue;
 }
+
 
 /* Desktop */
 @media (min-width: 1024px) {
   body {
     display: flex;
   }
+
   .container {
     margin-top: 220px;
   }
+  
 }

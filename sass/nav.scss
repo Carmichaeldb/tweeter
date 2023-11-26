@@ -1,0 +1,42 @@
+@import "utilities";
+
+/* Nav Global */
+nav {
+  position: fixed;
+  display: flex;
+  height: 120px;
+  width: 100%;
+  color: $gray;
+  @include center-between;
+  
+  * {
+    margin: 0em 1.5em 0em 1.5em;
+  }
+
+  span {
+    font-family: $bungee;
+  }
+
+  /* Nav right - Write Tweet */
+  .write-tweet {
+    height: 120px;
+    margin: 0;
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    @include center; 
+  }
+  
+  .fa-angles-down {
+    color: $red;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+
+  nav {
+    background-color: $lightBlue;
+    color: $white;
+  } 
+}

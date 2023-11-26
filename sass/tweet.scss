@@ -1,0 +1,62 @@
+@import "utilities";
+
+
+.tweets {
+  /* Tweets Global */
+  article {
+  border: 3px solid $black;
+  margin: 20px 10px 30px 10px;
+  padding: 10px;
+  }
+
+  article:hover {
+    box-shadow: 10px 10px $lightBlue;
+  }
+
+  /* Tweet Header */
+  header {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    @include center;
+
+    img {
+      padding-right: 10px;
+      max-width: 45px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .tweet-user {
+      margin-left: auto;
+    }
+  }
+
+  /* Tweet Content */
+  main {
+  max-width: 95%;
+  font-weight: bold;
+  }
+
+  /* Tweet Footer */
+  footer {
+    border-top: 3px solid $black;
+    font-size: 70%; 
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    @include center-between;
+
+    * {
+      margin: 5px 10px 5px 10px;
+    }
+    .tweet-icons {
+      color: $lightBlue;
+    }
+    .tweet-icons i:hover {
+      color: $orange;
+    }
+  }
+}
