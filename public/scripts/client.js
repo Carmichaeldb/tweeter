@@ -30,7 +30,7 @@ $("#to-top").click(function() {
     $(".fa-angles-down").animate({marginTop: '0px'}, "slow");
   });
 
-  // show write tweek form
+  // show write tweet form
   $(".write-tweet").on("click", function() {
     $(".new-tweet").slideDown().css({"display": "flex"});
     $("#tweet-text").focus();
