@@ -10,14 +10,14 @@
 }
 .new-tweet button {
   background-color: #4056A1;
-  color: #f4f1ec;
+  color: #FFFFFF;
   border: 0;
   padding: 3px;
 }
 .new-tweet #tweet-error {
   max-width: fit-content;
   background-color: #ff0000;
-  color: #f4f1ec;
+  color: #FFFFFF;
   font-weight: bold;
   box-shadow: 2px 2px 2px #545149;
   padding: 3px;

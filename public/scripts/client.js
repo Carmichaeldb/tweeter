@@ -40,7 +40,7 @@ $("#to-top").click(function() {
   $(".tweet-form").on("submit", function(event) {
     event.preventDefault();
     const tweetText = $("#tweet-text").val();
-    if (tweetText === "") {
+    if (tweetText.trim() === "") {
       $("#tweet-error").text("Your Tweet is Empty!").slideDown().css({"display": "inline-block"}).delay(2000).slideUp();
       return;
     }
@@ -54,6 +54,7 @@ $("#to-top").click(function() {
       data: $("form").serialize(),
       success: function(res) {
         $("#tweet-text").val("");
+        $(".counter").val("140");
         loadTweets();
       }
     });
