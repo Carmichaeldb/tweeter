@@ -56,6 +56,9 @@ $("#to-top").click(function() {
         $("#tweet-text").val("");
         $(".counter").val("140");
         loadTweets();
+      },
+      error: function(err) {
+        console.log(`Error: ${err}`);
       }
     });
   });
@@ -102,9 +105,13 @@ $("#to-top").click(function() {
     $.ajax("/tweets", {
       method: "GET",
       datType: "JSON",
-      success: (data) => { renderTweets(data); }
-    }
-    );
+      success: (data) => {
+        renderTweets(data);
+      },
+      error: function(err) {
+        console.log(`Error: ${err}`);
+      }
+    });
   };
 
   loadTweets();

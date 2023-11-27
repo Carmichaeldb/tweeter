@@ -1,6 +1,6 @@
 /* Nav Global */
 nav {
-  position: fixed;
+  position: absolute;
   display: flex;
   height: 120px;
   width: 100%;
@@ -31,6 +31,7 @@ nav .fa-angles-down {
 /* Desktop */
 @media (min-width: 1024px) {
   nav {
+    position: fixed;
     background-color: #4056A1;
     color: #FFFFFF;
   }

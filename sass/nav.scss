@@ -2,7 +2,7 @@
 
 /* Nav Global */
 nav {
-  position: fixed;
+  position: absolute;
   display: flex;
   height: 120px;
   width: 100%;
@@ -36,6 +36,7 @@ nav {
 @media (min-width: 1024px) {
 
   nav {
+    position: fixed;
     background-color: $lightBlue;
     color: $white;
   } 
